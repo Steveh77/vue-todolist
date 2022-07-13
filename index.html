@@ -15,8 +15,14 @@
     <div id="root">
         <div class="w-50 mx-auto">
             <h2 class="text-center">To Do List</h2>
-            <ul class="list-group my-2">
-                <li :class="toDo.done == false ? '': 'barred' " v-for="toDo in toDoList" class="list-group-item">{{ toDo.text }}</li>
+            <ul class="list-group my-2 d-flex ">
+                <li :class="toDo.done == false ? '': 'barred' "
+                v-for="(toDo,i) in toDoList" 
+                class="list-group-item d-flex justify-content-between">
+                    
+                    {{ toDo.text }}
+                    <button v-on:click="removeTodo(i)" type="button" class="btn-close" aria-label="Close"></button>
+                </li>
                 
             </ul>
         </div>
