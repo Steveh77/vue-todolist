@@ -17,7 +17,35 @@
 
 
 console.log("vue ok",Vue)
-
+Vue.config.devtools=true;
+const root = new Vue({
+    el:'#root',
+    data:{
+        toDoList:[
+            {
+                text:"Fare spesa",
+                done:false,
+            },
+            {
+                text:"Fare tagliando",
+                done:true,
+            },
+            {
+                text:"Andare in posta",
+                done:false,
+            },
+            {
+                text:"Andare a pranzo",
+                done:true,
+            },
+        ],
+        
+    },
+    methods:{
+        
+    },
+    
+});
 
 
 
