@@ -21,6 +21,7 @@ Vue.config.devtools=true;
 const root = new Vue({
     el:'#root',
     data:{
+        newTodo:"",
         toDoList:[
             {
                 text:"Fare spesa",
@@ -46,6 +47,12 @@ const root = new Vue({
             console.log(index)
             this.toDoList.splice(index,1)
             
+        },
+        addToDo(){
+            if (this.newTodo==="") return;
+            this.toDoList.push({text:this.newTodo , done: false}),
+            this.newTodo="";
+
         }
     },
     

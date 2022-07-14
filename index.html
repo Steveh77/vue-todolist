@@ -15,6 +15,10 @@
     <div id="root">
         <div class="w-50 mx-auto">
             <h2 class="text-center">To Do List</h2>
+            <div class="input-group">
+                <input v-model.trim="newTodo" type="text" class="form-control" placeholder="Aggiungi cose da fare">
+                <button v-on:click="addToDo" class="btn btn-success">Aggiungi</button>
+            </div>
             <ul class="list-group my-2 d-flex ">
                 <li :class="toDo.done == false ? '': 'barred' "
                 v-for="(toDo,i) in toDoList" 
